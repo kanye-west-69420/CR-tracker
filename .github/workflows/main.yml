@@ -23,9 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests gspread google-auth-oauthlib
 
-      - name: Create credentials file from secret
+      - name: Decode credentials file from secret
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" > credentials.json
+          echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode > credentials.json
 
       - name: Run Python script
         env:
