@@ -15,7 +15,7 @@ WORKSHEET_NAME = 'Sheet1' # The name of the tab in your sheet
 
 def fetch_and_process_battles():
     """Fetches battle data, filters for ladder matches, and extracts key stats."""
-    api_url = f'https://api.clashroyale.com/v1/players/{PLAYER_TAG}/battlelog'
+    api_url = f'https://proxy.royaleapi.dev/v1/players/{PLAYER_TAG}/battlelog'
     headers = {'Authorization': f'Bearer {BEARER_TOKEN}'}
     print(f"[{datetime.now()}] Fetching data from API for tag {PLAYER_TAG}...")
 
